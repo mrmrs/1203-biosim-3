@@ -2,7 +2,7 @@
   "name": "1203-biosim-3",
   "private": true,
   "version": "1.0.0",
-  "description": "Three biosim approaches — specimens, organisms, and flow field — one public gallery.",
+  "description": "Public Cloudflare deploy of the Flow Lenia biosim (shader-biosim-cursor).",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",

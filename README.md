@@ -1,45 +1,37 @@
-# 1203 — biosim³
+# 1203-biosim-3
 
-One public URL for three biosim prototypes:
+Public deploy of the **Flow Lenia** biosim (`shader-biosim-cursor`).
 
-| Path | Source | Stack |
-|------|--------|-------|
-| `/` | Gallery hub | static |
-| `/specimens/` | `shader-biosim` | WebGL2 |
-| `/organisms/` | `shader-biosim-claude` | WebGL2 |
-| `/flow/` | `shader-biosim-cursor` | WebGPU |
+The live site opens the instrument immediately — no gallery, no approach picker.
 
-The engines stay separate. This repo is a **presentation shell** that builds each sibling into a subpath and deploys them together on Cloudflare Workers.
+| | |
+|---|---|
+| **App** | WebGPU Flow Lenia specimen instrument |
+| **Source** | sibling repo `../shader-biosim-cursor` |
+| **Host** | Cloudflare Workers (static assets) |
 
-## Requirements
+## Develop
 
-Sibling repos must sit next to this folder:
-
-```
-p/
-  1203-biosim-3/          ← this repo
-  shader-biosim/
-  shader-biosim-claude/
-  shader-biosim-cursor/
-```
-
-Node 20+, Cloudflare account (`wrangler` logged in), Chrome for `/flow/`.
-
-## Build & deploy
+Work in the source app:
 
 ```bash
-npm install
-npm run build     # builds all three apps + hub → dist/
+cd ../shader-biosim-cursor
+npm run dev   # http://127.0.0.1:5188
+```
+
+## Deploy
+
+From this repo (sibling `shader-biosim-cursor` must exist):
+
+```bash
+npm install --include=optional
 npm run deploy    # build + wrangler deploy
 ```
 
-Preview locally:
+Preview:
 
 ```bash
 npm run preview
 ```
 
-## Notes
-
-- Large `moments/` checkpoints from specimens are stripped before upload.
-- Flow requires WebGPU; the hub detects support and soft-blocks the link when missing.
+Needs Chrome/Edge 113+ (or Safari 26+) with WebGPU.
