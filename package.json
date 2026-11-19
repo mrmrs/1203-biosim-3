@@ -1,0 +1,15 @@
+{
+  "name": "1203-biosim-3",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Three biosim approaches — specimens, organisms, and flow field — one public gallery.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.93.0"
+  }
+}

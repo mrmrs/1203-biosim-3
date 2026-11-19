@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0c0b" />
+  <title>1203 — biosim³</title>
+  <meta name="description" content="Three approaches to artificial life in the browser: specimens, organisms, and a WebGPU flow field." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="brand">1203</p>
+    <h1>biosim³</h1>
+    <p class="lede">Three instruments. Same brief. Different answers.</p>
+    <nav class="cta" aria-label="Approaches">
+      <a href="/specimens/">Specimens</a>
+      <a href="/organisms/">Organisms</a>
+      <a href="/flow/">Flow</a>
+    </nav>
+  </header>
+
+  <section class="approaches" id="approaches">
+    <h2>Choose an approach</h2>
+    <p class="section-lede">Each build is a full app — open one and explore.</p>
+
+    <ul class="lanes">
+      <li>
+        <a class="lane" href="/specimens/">
+          <span class="lane-kicker">WebGL · sculpture</span>
+          <span class="lane-title">Specimens</span>
+          <span class="lane-body">Sixteen authored reaction–diffusion volumes. Chambered shells, labyrinths, mineral organs — a gallery of living sculpture and film tooling.</span>
+          <span class="lane-meta">shader-biosim</span>
+        </a>
+      </li>
+      <li>
+        <a class="lane" href="/organisms/">
+          <span class="lane-kicker">WebGL · ecology</span>
+          <span class="lane-title">Organisms</span>
+          <span class="lane-body">Two-scale tissue with genetic fauna: graze, hunt, birth, death. Body plans you can inherit. The closest thing to a living dish.</span>
+          <span class="lane-meta">shader-biosim-claude</span>
+        </a>
+      </li>
+      <li>
+        <a class="lane" href="/flow/" data-webgpu>
+          <span class="lane-kicker">WebGPU · field</span>
+          <span class="lane-title">Flow</span>
+          <span class="lane-body">Flow Lenia on compute shaders — mass, genomes, Gray-Scott tissue, physarum swarm, spring filaments. Needs a WebGPU browser.</span>
+          <span class="lane-meta">shader-biosim-cursor</span>
+        </a>
+        <p class="gpu-note" hidden>WebGPU not detected — Flow needs Chrome/Edge 113+ or Safari 26+.</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Three harnesses, one brief. Built to compare — not to collapse into one engine.</p>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
